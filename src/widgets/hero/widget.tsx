@@ -7,7 +7,7 @@ export function HeroSectionOne() {
 	return (
 		<div className="relative flex min-h-screen flex-col items-center justify-center">
 			<div className="px-4 py-24">
-				<h1 className="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold text-slate-700 md:text-4xl lg:text-7xl dark:text-slate-300">
+				<h1 className="relative z-10 mx-auto max-w-4xl text-foreground text-center text-2xl font-bold md:text-4xl lg:text-7xl">
 					{"Launch your website in hours, not days"
 						.split(" ")
 						.map((word, index) => (
