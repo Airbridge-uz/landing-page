@@ -12,7 +12,7 @@ import { AppLogo } from "../logo/widget";
 export function FeaturesWidget() {
 	return (
 		<section className="py-24 overflow-hidden">
-			<div className="container mx-auto px-4 relative z-10">
+			<div className="container mx-auto relative z-10">
 				{/* Header */}
 				<div className="text-center max-w-3xl mx-auto mb-20">
 					<div className="flex justify-center mb-6">
@@ -30,11 +30,11 @@ export function FeaturesWidget() {
 				</div>
 
 				{/* Diagram Section */}
-				<div className="max-w-5xl mx-auto hidden md:block">
+				<div className="hidden md:block ml-2">
 					{/* Main Flex Loop: Items stretch to match height of tallest element (Side Columns) */}
 					<div className="flex justify-between items-stretch relative w-full">
 						{/* Left Column (Stripe, Filament) */}
-						<div className="flex flex-col gap-24 relative pl-4 justify-center">
+						<div className="flex flex-col gap-24 relative justify-center">
 							{/* Left Bracket Connector */}
 							<div className="absolute -right-8 top-1/2 -translate-y-1/2 w-8 h-[calc(100%-3rem)] rounded-l-none border-t border-b border-r border-zinc-700 pointer-events-none" />
 
@@ -62,14 +62,14 @@ export function FeaturesWidget() {
 							<div className="flex-1 w-px"></div> {/* Invisible Top Spacer */}
 							<AppLogo />
 							{/* Visible Bottom Spacer - Draws line to bottom edge of container */}
-							<div className="flex-1 w-px ml-[9px] bg-foreground relative -z-10"></div>
+							<div className="flex-1 w-px bg-foreground relative -z-10"></div>
 						</div>
 
 						{/* Right Horizontal Connector - Responsive flex spacer */}
 						<div className="flex-1 h-px bg-foreground relative mr-8 self-center"></div>
 
 						{/* Right Column (Supabase, UserAuth) */}
-						<div className="flex flex-col gap-24 relative pr-4 justify-center">
+						<div className="flex flex-col gap-24 relative justify-center">
 							{/* Right Bracket Connector */}
 							<div className="absolute -left-8 top-1/2 -translate-y-1/2 w-8 h-[calc(100%-3rem)] rounded-r-none border-t border-b border-l border-zinc-700 pointer-events-none" />
 
@@ -92,7 +92,7 @@ export function FeaturesWidget() {
 				{/* Bottom Connectors (Fork to Cards) */}
 				{/* Overlap top margin slightly to ensure visual connection with the center column line */}
 				<div
-					className="max-w-5xl mx-auto h-16 relative hidden md:block -mt-px"
+					className="max-w-5xl mx-auto h-16 pt-8 relative hidden md:block -mt-px"
 					aria-hidden="true"
 				>
 					{/* Vertical Connector in Fork Section - Bridges any remaining gap? 
@@ -100,16 +100,16 @@ export function FeaturesWidget() {
                         We just need the fork structure.
                      */}
 					{/* Central Vertical Line Segment - From top to Horizontal Bar */}
-					<div className="absolute left-1/2 -translate-x-1/2 top-0 h-8 w-px bg-foreground"></div>
+					<div className="absolute left-1/2 -translate-x-1/2 top-0 h-16 w-px bg-foreground"></div>
 
 					{/* Horizontal Bar */}
-					<div className="absolute left-[16.666%] right-[16.666%] top-8 h-px bg-foreground"></div>
+					<div className="absolute left-[16.666%] right-[16.666%] h-px bg-foreground"></div>
 
 					{/* 3 Forks down from the horizontal bar */}
 					{/* Left Fork */}
 					<div className="absolute left-[16.666%] top-8 bottom-0 w-px bg-foreground"></div>
 					{/* Center Fork */}
-					<div className="absolute left-1/2 -translate-x-1/2 top-8 bottom-0 w-px bg-foreground"></div>
+					<div className="absolute left-1/2 -translate-x-1/2 bottom-0 w-px bg-foreground"></div>
 					{/* Right Fork */}
 					<div className="absolute right-[16.666%] top-8 bottom-0 w-px bg-foreground"></div>
 				</div>
