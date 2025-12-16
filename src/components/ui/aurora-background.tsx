@@ -1,7 +1,7 @@
 "use client";
-import { cn } from "@/lib/utils";
 import type React from "react";
 import type { ReactNode } from "react";
+import { cn } from "@/lib/utils";
 
 interface AuroraBackgroundProps extends React.HTMLProps<HTMLDivElement> {
 	children: ReactNode;
@@ -18,7 +18,7 @@ export const AuroraBackground = ({
 		<main>
 			<div
 				className={cn(
-					"transition-bg relative flex h-screen flex-col items-center justify-center bg-zinc-50 text-slate-950 dark:bg-zinc-900",
+					"transition-bg relative flex min-h-screen flex-col items-center justify-center bg-zinc-50 text-slate-950 dark:bg-zinc-900",
 					className,
 				)}
 				{...props}
