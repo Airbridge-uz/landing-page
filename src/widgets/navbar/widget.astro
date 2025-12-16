@@ -1,0 +1,24 @@
+---
+import { Button } from "@/components/ui/button";
+import AppLogo from "@/widgets/logo/widget.astro";
+import { navigationItems } from "./items";
+import { MobileNavbar } from "./mobile-widget";
+---
+
+<header class="bg-background/60 backdrop-blur sticky top-0 z-50 w-full">
+			<div class="mx-auto flex max-w-7xl items-center justify-between gap-8 px-4 py-7 sm:px-6">
+				<AppLogo />
+				<div class="text-muted-foreground flex flex-1 items-center gap-8 font-medium md:justify-center lg:gap-16">
+					{navigationItems.map((item) => (
+						<a href={item.href} class="hover:text-primary max-md:hidden">
+							{item.title}
+						</a>
+					))}
+				</div>
+				<div class="flex gap-2 items-center">
+					<Button size="default">Log in</Button>
+					<Button size="default" variant="outline">Sign up</Button>
+				</div>
+                <MobileNavbar client:media="(max-width: 768px)" />
+			</div>
+		</header>
