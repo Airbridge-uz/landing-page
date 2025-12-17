@@ -1,4 +1,5 @@
 ---
+import { CompareDemo } from "@/widgets/comparison/widget";
 import "../styles/global.css";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import Features from "@/widgets/features/widget.astro";
@@ -24,6 +25,7 @@ import AppNav from "@/widgets/navbar/widget.astro";
 			<AppNav />
 			<HeroSection />
 			<Features />
+			<CompareDemo client:visible />
 		</AuroraBackground>
 	</body>
 </html>
