@@ -1,4 +1,3 @@
-import { Sparkles } from "lucide-react";
 import { Compare } from "@/components/ui/compare";
 
 export function CompareDemo() {
@@ -9,7 +8,6 @@ export function CompareDemo() {
 				<div className="text-center max-w-3xl mx-auto mb-16">
 					<div className="flex justify-center mb-6">
 						<span className="bg-foreground text-background border border-border rounded-full px-3 py-2 text-xs font-medium flex items-center gap-2">
-							<Sparkles size={12} className="text-primary" />
 							Transformation
 						</span>
 					</div>

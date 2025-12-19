@@ -5,10 +5,10 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import AboutUs from "@/widgets/about-us/widget.astro";
 import { ContactUs } from "@/widgets/contact-us";
 import Features from "@/widgets/features/widget.astro";
+import Footer from "@/widgets/footer/widget.astro";
 // Component Imports
 import HeroSection from "@/widgets/hero/widget.astro";
 import AppNav from "@/widgets/navbar/widget.astro";
-
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -30,6 +30,7 @@ import AppNav from "@/widgets/navbar/widget.astro";
             <CompareDemo client:visible />
             <ContactUs />
 			<AboutUs />
+			<Footer />
 		</AuroraBackground>
 	</body>
 </html>
