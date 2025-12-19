@@ -1,0 +1,31 @@
+---
+import { BackgroundRippleEffect } from "@/components/ui/background-ripple-effect";
+import { cn } from "@/lib/utils";
+import { ContactForm } from "./components/contact-form";
+import ContactInfo from "./components/contact-info.astro";
+---
+
+<section class={cn(
+    "py-24 relative w-full",
+    )}>
+    <BackgroundRippleEffect class:list={["w-full!"]} client:load />
+    <div class="container mx-auto px-4 relative z-20">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-foreground">
+                How Can We Help?
+            </h2>
+            <p class="text-xl text-muted-foreground">
+                Have a question or need assistance? Contact us and let's find a solution together!
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 border rounded-3xl p-8 lg:p-12 bg-card/50 backdrop-blur-sm shadow-sm">
+            <div class="lg:col-span-5 h-full">
+                <ContactInfo />
+            </div>
+            <div class="lg:col-span-7">
+                <ContactForm client:visible />
+            </div>
+        </div>
+    </div>
+</section>

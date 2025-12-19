@@ -1,0 +1,27 @@
+---
+import { Mail, MapPin, Phone } from "lucide-react";
+---
+
+<div class="bg-muted text-muted-foreground p-8 rounded-2xl h-full flex flex-col justify-between">
+    <div>
+        <h3 class="text-2xl font-bold text-foreground mb-4">Contact Information</h3>
+        <p class="mb-8">
+            Explore new destinations, indulge in local cuisines, and immerse yourself in diverse cultures.
+        </p>
+
+        <div class="space-y-6">
+            <div class="flex items-center gap-4">
+                <Phone className="w-6 h-6" />
+                <span class="font-medium">+1-316-555-1258</span>
+            </div>
+            <div class="flex items-center gap-4">
+                <Mail className="w-6 h-6" />
+                <span class="font-medium">hadams@gmail.com</span>
+            </div>
+            <div class="flex items-start gap-4">
+                <MapPin className="w-6 h-6 shrink-0" />
+                <span class="font-medium">802 Pension Rd, Maine 96812, USA</span>
+            </div>
+        </div>
+    </div>
+</div>

@@ -2,6 +2,7 @@
 import { CompareDemo } from "@/widgets/comparison/widget";
 import "../styles/global.css";
 import { AuroraBackground } from "@/components/ui/aurora-background";
+import { ContactUs } from "@/widgets/contact-us";
 import Features from "@/widgets/features/widget.astro";
 // Component Imports
 import HeroSection from "@/widgets/hero/widget.astro";
@@ -24,8 +25,9 @@ import AppNav from "@/widgets/navbar/widget.astro";
 		<AuroraBackground>
 			<AppNav />
 			<HeroSection />
-			<Features />
-			<CompareDemo client:visible />
+            <Features />
+            <CompareDemo client:visible />
+            <ContactUs />
 		</AuroraBackground>
 	</body>
 </html>
