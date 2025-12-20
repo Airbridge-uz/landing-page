@@ -2,7 +2,7 @@ import { Compare } from "@/components/ui/compare";
 
 export function CompareDemo() {
 	return (
-		<section className="w-full py-24 overflow-hidden relative">
+		<section id="comparison" className="w-full py-24 overflow-hidden relative">
 			<div className="container mx-auto px-4 relative z-10">
 				{/* Header Section (Consistent with Features) */}
 				<div className="text-center max-w-3xl mx-auto mb-16">

@@ -4,6 +4,7 @@ import "../styles/global.css";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import AboutUs from "@/widgets/about-us/widget.astro";
 import { ContactUs } from "@/widgets/contact-us";
+import { Accordion } from "@/widgets/faq/accordion";
 import FAQ from "@/widgets/faq/widget.astro";
 import Features from "@/widgets/features/widget.astro";
 import Footer from "@/widgets/footer/widget.astro";
@@ -11,9 +12,31 @@ import Footer from "@/widgets/footer/widget.astro";
 import HeroSection from "@/widgets/hero/widget.astro";
 import AppNav from "@/widgets/navbar/widget.astro";
 import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
+
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
+
+<script is:inline>
+	const getThemePreference = () => {
+		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
+			return localStorage.getItem('theme');
+		}
+		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+	};
+	const isDark = getThemePreference() === 'dark';
+	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
+ 
+	if (typeof localStorage !== 'undefined') {
+		const observer = new MutationObserver(() => {
+			const isDark = document.documentElement.classList.contains('dark');
+			localStorage.setItem('theme', isDark ? 'dark' : 'light');
+		});
+		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
+	}
+</script>
+
+
 
 <html lang="en">
 	<head>
@@ -30,9 +53,8 @@ import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
 			<HeroSection />
             <Features />
             <CompareDemo client:visible />
-            <ContactUs />
 			<AboutUs />
-			<FAQ />
+            <ContactUs />
 			<Footer />
 			<ScrollToTop client:load />
 		</AuroraBackground>

@@ -11,7 +11,7 @@ import { AppLogo } from "../logo/widget";
 
 export function FeaturesWidget() {
 	return (
-		<section className="py-24 overflow-hidden">
+		<section id="features" className="py-24 overflow-hidden">
 			<div className="container mx-auto relative z-10">
 				{/* Header */}
 				<div className="text-center max-w-3xl mx-auto mb-20">
@@ -20,7 +20,7 @@ export function FeaturesWidget() {
 							Our Features
 						</span>
 					</div>
-					<h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight">
+					<h2 className="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-foreground">
 						Offer your clients a better retainer experience, scale your agency
 					</h2>
 					<p className="text-xl text-zinc-400">
@@ -38,13 +38,13 @@ export function FeaturesWidget() {
 							{/* Left Bracket Connector */}
 							<div className="absolute -right-8 top-1/2 -translate-y-1/2 w-8 h-[calc(100%-3rem)] rounded-l-none border-t border-b border-r border-zinc-700 pointer-events-none" />
 
-							<div className="flex items-center gap-3 border px-4 py-2 rounded-lg shadow-sm z-10 relative">
+							<div className="flex items-center gap-3 border px-4 py-2 rounded-lg shadow-sm z-10 relative text-foreground">
 								<div className="bg-indigo-600 p-1 rounded text-white">
 									<CreditCard size={16} />
 								</div>
 								<span className="font-semibold text-sm">Stripe</span>
 							</div>
-							<div className="flex items-center gap-3 border px-4 py-2 rounded-lg shadow-sm z-10 relative">
+							<div className="flex items-center gap-3 border px-4 py-2 rounded-lg shadow-sm z-10 relative text-foreground">
 								<div className="bg-orange-600 p-1 rounded text-white">
 									<Activity size={16} />
 								</div>
@@ -73,13 +73,13 @@ export function FeaturesWidget() {
 							{/* Right Bracket Connector */}
 							<div className="absolute -left-8 top-1/2 -translate-y-1/2 w-8 h-[calc(100%-3rem)] rounded-r-none border-t border-b border-l border-zinc-700 pointer-events-none" />
 
-							<div className="flex items-center gap-3 border px-4 py-2 rounded-lg shadow-sm z-10 relative">
+							<div className="flex items-center gap-3 border px-4 py-2 rounded-lg shadow-sm z-10 relative text-foreground">
 								<div className="bg-emerald-600 p-1 rounded text-white">
 									<Zap size={16} />
 								</div>
 								<span className="font-semibold text-sm">Supabase</span>
 							</div>
-							<div className="flex items-center gap-3 border px-4 py-2 rounded-lg shadow-sm z-10 relative">
+							<div className="flex items-center gap-3 border px-4 py-2 rounded-lg shadow-sm z-10 relative text-foreground">
 								<div className="bg-sky-600 p-1 rounded text-white">
 									<Key size={16} />
 								</div>
@@ -118,7 +118,7 @@ export function FeaturesWidget() {
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6 relative z-10">
 					{/* Card 1 */}
 					<div className="border rounded-xl overflow-hidden transition-colors">
-						<div className="p-6">
+						<div className="p-6 text-foreground">
 							<div className="flex items-center gap-2 mb-3">
 								<BarChart size={18} />
 								<h3 className="font-semibold">Usage Transparency</h3>
@@ -129,7 +129,7 @@ export function FeaturesWidget() {
 							</p>
 						</div>
 						{/* Visual */}
-						<div className="px-6 pb-6">
+						<div className="px-6 pb-6 text-foreground">
 							<div className="rounded-lg p-4 relative overflow-hidden h-[160px]">
 								<div className="absolute top-4 left-4 text-xs font-bold px-2 py-1 rounded shadow">
 									Available Hours
@@ -170,7 +170,7 @@ export function FeaturesWidget() {
 					</div>
 
 					{/* Card 2 */}
-					<div className="border rounded-xl overflow-hidden transition-colors">
+					<div className="border rounded-xl overflow-hidden transition-colors text-foreground">
 						<div className="p-6">
 							<div className="flex items-center gap-2 mb-3">
 								<Users size={18} />
@@ -205,7 +205,7 @@ export function FeaturesWidget() {
 					</div>
 
 					{/* Card 3 */}
-					<div className="border rounded-xl overflow-hidden transition-colors">
+					<div className="border rounded-xl overflow-hidden transition-colors text-foreground">
 						<div className="p-6">
 							<div className="flex items-center gap-2 mb-3">
 								<Layout size={18} />

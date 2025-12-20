@@ -1,8 +1,26 @@
 ---
+import { Accordion } from "./accordion";
 import { Questions } from "./questions";
+
+const accordionData = [
+	{
+		title: "Is it accessible?",
+		description: "Yes. It adheres to the WAI-ARIA design pattern.",
+	},
+	{
+		title: "Is it styled?",
+		description:
+			"Yes. It comes with default styles that matches the other components' aesthetic.",
+	},
+	{
+		title: "Is it animated?",
+		description:
+			"Yes. It's animated by default, but you can disable it if you prefer.",
+	},
+];
 ---
 
-<section class='py-8 sm:py-16 lg:py-24'>
+<section id="faq" class='py-8 sm:py-16 lg:py-24 w-full'>
       <div class='mx-auto container px-4 sm:px-6 lg:px-8'>
             <div class="flex justify-center mb-6">
                 <span class="bg-foreground text-background border border-border rounded-full px-3 py-2 text-xs font-medium flex items-center gap-2">
@@ -13,12 +31,12 @@ import { Questions } from "./questions";
             </div>
         {/* FAQ Header */}
         <div class='mb-12 space-y-4 text-center sm:mb-16 lg:mb-24'>
-          <h2 class='text-2xl font-semibold md:text-3xl lg:text-4xl'>Need Help? We&apos;ve Got Answers</h2>
+          <h2 class='text-2xl font-semibold md:text-3xl lg:text-4xl text-foreground'>Need Help? We&apos;ve Got Answers</h2>
           <p class='text-muted-foreground text-xl'>
             Explore Our Most Commonly Asked Questions and Find the Information You Need.
           </p>
         </div>
 
-        <Questions /> 
+        <Accordion data={accordionData} client:idle />
       </div>
     </section>

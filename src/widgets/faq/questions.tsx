@@ -30,12 +30,7 @@ const faqItems = [
 
 export function Questions() {
 	return (
-		<Accordion
-			type="single"
-			collapsible
-			className="w-full"
-			defaultValue="item-1"
-		>
+		<Accordion type="multiple" className="w-full">
 			{faqItems.map((item, index) => (
 				<AccordionItem key={item.question} value={`item-${index + 1}`}>
 					<AccordionTrigger className="text-lg">

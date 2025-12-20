@@ -7,7 +7,7 @@ export function ContactForm() {
 				<div className="space-y-2">
 					<label
 						htmlFor="name"
-						className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
 					>
 						Your Name
 					</label>
@@ -21,7 +21,7 @@ export function ContactForm() {
 				<div className="space-y-2">
 					<label
 						htmlFor="email"
-						className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+						className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
 					>
 						Your Email
 					</label>
@@ -37,7 +37,7 @@ export function ContactForm() {
 			<div className="space-y-2">
 				<label
 					htmlFor="subject"
-					className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+					className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
 				>
 					Your Subject
 				</label>
@@ -52,7 +52,7 @@ export function ContactForm() {
 			<div className="space-y-2">
 				<label
 					htmlFor="message"
-					className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+					className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
 				>
 					Message
 				</label>

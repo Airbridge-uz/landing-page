@@ -1,6 +1,7 @@
 ---
 import { Button } from "@/components/ui/button";
 import AppLogo from "@/widgets/logo/widget.astro";
+import { ThemeSwitcher } from "@/widgets/theme-switcher/widget";
 import { navigationItems } from "./items";
 import { MobileNavbar } from "./mobile-widget";
 ---
@@ -18,6 +19,7 @@ import { MobileNavbar } from "./mobile-widget";
 				<div class="flex gap-2 items-center">
 					<Button size="default">Log in</Button>
 					<Button size="default" variant="outline">Sign up</Button>
+					<ThemeSwitcher client:load />
 				</div>
                 <MobileNavbar client:media="(max-width: 768px)" />
 			</div>
