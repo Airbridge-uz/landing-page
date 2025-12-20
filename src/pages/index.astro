@@ -10,6 +10,7 @@ import Footer from "@/widgets/footer/widget.astro";
 // Component Imports
 import HeroSection from "@/widgets/hero/widget.astro";
 import AppNav from "@/widgets/navbar/widget.astro";
+import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
 // Full Astro Component Syntax:
 // https://docs.astro.build/basics/astro-components/
 ---
@@ -33,6 +34,7 @@ import AppNav from "@/widgets/navbar/widget.astro";
 			<AboutUs />
 			<FAQ />
 			<Footer />
+			<ScrollToTop client:load />
 		</AuroraBackground>
 	</body>
 </html>
