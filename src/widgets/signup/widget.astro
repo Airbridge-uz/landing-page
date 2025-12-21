@@ -1,0 +1,18 @@
+---
+import { APP_URL } from "astro:env/client";
+import { Button, buttonVariants } from "@/components/ui/button";
+
+type ButtonProps = Parameters<typeof Button>[0];
+
+interface Props {
+	className?: string;
+	variant?: ButtonProps["variant"];
+	size?: ButtonProps["size"];
+}
+
+const { className, variant, size } = Astro.props;
+---
+
+<a class={buttonVariants({ variant, size, className })} href={`${APP_URL}/sign-up`}>
+	Sign up
+</a>

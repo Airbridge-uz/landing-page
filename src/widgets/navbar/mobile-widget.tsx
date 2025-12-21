@@ -26,6 +26,18 @@ export function MobileNavbar() {
 								<a href={item.href}>{item.title}</a>
 							</DropdownMenuItem>
 						))}
+						<DropdownMenuItem className="flex gap-2 items-center">
+							<Button size="default" className="md:hidden block">
+								Log in
+							</Button>
+							<Button
+								size="default"
+								variant="outline"
+								className="md:hidden block"
+							>
+								Sign up
+							</Button>
+						</DropdownMenuItem>
 					</DropdownMenuGroup>
 				</DropdownMenuContent>
 			</DropdownMenu>

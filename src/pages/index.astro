@@ -1,20 +1,16 @@
 ---
 import { CompareDemo } from "@/widgets/comparison/widget";
+import PostHogLayout from "../layouts/PostHogLayout.astro";
 import "../styles/global.css";
 import { AuroraBackground } from "@/components/ui/aurora-background";
 import AboutUs from "@/widgets/about-us/widget.astro";
 import { ContactUs } from "@/widgets/contact-us";
-import { Accordion } from "@/widgets/faq/accordion";
-import FAQ from "@/widgets/faq/widget.astro";
 import Features from "@/widgets/features/widget.astro";
 import Footer from "@/widgets/footer/widget.astro";
 // Component Imports
 import HeroSection from "@/widgets/hero/widget.astro";
 import AppNav from "@/widgets/navbar/widget.astro";
 import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
-
-// Full Astro Component Syntax:
-// https://docs.astro.build/basics/astro-components/
 ---
 
 <script is:inline>
@@ -26,7 +22,7 @@ import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
 	};
 	const isDark = getThemePreference() === 'dark';
 	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
- 
+ 	
 	if (typeof localStorage !== 'undefined') {
 		const observer = new MutationObserver(() => {
 			const isDark = document.documentElement.classList.contains('dark');
@@ -36,27 +32,27 @@ import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
 	}
 </script>
 
+<PostHogLayout>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width" />
+      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+      <meta name="generator" content={Astro.generator} />
+      <title>Astro + TailwindCSS</title>
+    </head>
 
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro + TailwindCSS</title>
-	</head>
-
-	<body>
-		<AuroraBackground>
-			<AppNav />
-			<HeroSection />
-            <Features />
-            <CompareDemo client:visible />
-			<AboutUs />
-            <ContactUs />
-			<Footer />
-			<ScrollToTop client:load />
-		</AuroraBackground>
-	</body>
-</html>
+    <body>
+      <AuroraBackground>
+        <AppNav />
+        <HeroSection />
+        <Features />
+        <CompareDemo client:visible />
+        <AboutUs />
+        <ContactUs />
+        <Footer />
+        <ScrollToTop client:load />
+      </AuroraBackground>
+    </body>
+  </html>
+</PostHogLayout>
