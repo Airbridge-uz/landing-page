@@ -1,9 +1,10 @@
 ---
-import PostHog from '../components/posthog.astro';
+import { NODE_ENV } from "astro:env/client";
+import PostHog from "../components/posthog.astro";
 ---
 <html>
   <head>
-    <PostHog />
+    {NODE_ENV === "production" && <PostHog />}
   </head>
   <body>
     <slot />

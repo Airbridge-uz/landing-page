@@ -21,6 +21,10 @@ export default defineConfig({
 				access: "public",
 				context: "client",
 			}),
+			NODE_ENV: envField.string({
+				access: "public",
+				context: "client",
+			}),
 		},
 	},
 });
