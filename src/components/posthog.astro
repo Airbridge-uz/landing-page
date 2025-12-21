@@ -1,7 +1,6 @@
 ---
 ---
 <script is:inline type="text/javascript" id="posthog-js">
-import { POSTHOG_PROJECT_ID } from "astro:env/client";
 
   !(function(t, e) {
     var o, n, p, r;
@@ -41,7 +40,7 @@ import { POSTHOG_PROJECT_ID } from "astro:env/client";
       (e.__SV = 1));
   })(document, window.posthog || []);
   if (process.env.NODE_ENV !== "production") {
-    posthog.init(POSTHOG_PROJECT_ID, { 
+    posthog.init("phc_UmKu9QDkd5Caer4gweUZcpzS7NErj5rxkn5U4927mnl", { 
       api_host: 'https://us.i.posthog.com', 
       defaults: '2025-05-24' 
     });
