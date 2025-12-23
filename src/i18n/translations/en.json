@@ -1,0 +1,47 @@
+{
+	"nav": {
+		"features": "Features",
+		"compare": "Compare",
+		"aboutUs": "About Us",
+		"contactUs": "Contact Us"
+	},
+	"hero": {
+		"title": "Plan your trip in minutes, not hours",
+		"description": "With SkySearch, you can plan your trip to Central Asia in minutes, not hours. Try our best in class, state of the art, cutting edge AI tools to get your trip up.",
+		"exploreNow": "Explore Now",
+		"contactUs": "Contact Us"
+	},
+	"features": {
+		"badge": "Our Features",
+		"title": "Offer your clients a better retainer experience, scale your agency",
+		"description": "Using technology to make finance simpler, smarter and more rewarding.",
+		"card1Title": "Usage Transparency",
+		"card1Description": "Protect your sensitive information with advanced security measures.",
+		"card2Title": "Client-facing Portal",
+		"card2Description": "Protect your sensitive information with advanced security measures.",
+		"card3Title": "Task Collaboration",
+		"card3Description": "Protect your sensitive information with advanced security measures.",
+		"availableHours": "Available Hours",
+		"daysLeft": "10 Days left for the project",
+		"hours": "Hours",
+		"spent": "Spent",
+		"projected": "Projected",
+		"available": "Available",
+		"remaining": "Remaining"
+	},
+	"aboutUs": {
+		"badge": "About Us",
+		"title": "Our Journey & Vision",
+		"description": "Discover who we are, what drives us, and where we're headed. We are dedicated to making a lasting impact through innovation and community."
+	},
+	"footer": {
+		"about": "About",
+		"features": "Features",
+		"works": "Works",
+		"career": "Career",
+		"copyright": "Made with ❤️ for better web."
+	},
+	"languageSwitcher": {
+		"label": "Language"
+	}
+}

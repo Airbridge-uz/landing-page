@@ -6,22 +6,30 @@ import {
 	YoutubeIcon,
 } from "lucide-react";
 import { Separator } from "@/components/ui/separator";
+import type { Language, Translations } from "@/i18n/utils";
 import { AppLogo } from "../logo/widget";
+
+interface Props {
+	lang: Language;
+	t: Translations;
+}
+
+const { lang, t } = Astro.props;
 ---
 
 <footer class="w-full text-foreground">
       <div class="container mx-auto flex items-center justify-between gap-3 px-4 py-4 max-md:flex-col sm:px-6 sm:py-6 md:gap-6 md:py-8">
-        <a href='#'>
+        <a href={`/${lang}/`}>
           <div class="flex items-center gap-3">
             <AppLogo />
           </div>
         </a>
 
         <div class="flex items-center gap-5 whitespace-nowrap">
-          <a href='#'>About</a>
-          <a href='#'>Features</a>
-          <a href='#'>Works</a>
-          <a href='#'>Career</a>
+          <a href={`/${lang}/#about-us`}>{t.footer.about}</a>
+          <a href={`/${lang}/#features`}>{t.footer.features}</a>
+          <a href='#'>{t.footer.works}</a>
+          <a href='#'>{t.footer.career}</a>
         </div>
 
         <div class='flex items-center gap-4'>
@@ -44,7 +52,7 @@ import { AppLogo } from "../logo/widget";
 
       <div class='mx-auto flex w-full justify-center px-4 py-8 sm:px-6'>
         <p class='text-center font-medium text-balance'>
-          {`©${new Date().getFullYear()}`} <a href='#'>shadcn/studio</a>, Made with ❤️ for better web.
+          {`©${new Date().getFullYear()}`} <a href={`/${lang}/`}>SkySearch</a>, {t.footer.copyright}
         </p>
       </div>
     </footer>

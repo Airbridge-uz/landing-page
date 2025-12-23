@@ -1,10 +1,37 @@
 ---
+import type { Language, Translations } from "@/i18n/utils";
+import { LanguageSwitcher } from "@/widgets/language-switcher/widget";
 import LoginWidget from "@/widgets/login/widget.astro";
 import AppLogo from "@/widgets/logo/widget.astro";
 import SignupWidget from "@/widgets/signup/widget.astro";
 import { ThemeSwitcher } from "@/widgets/theme-switcher/widget";
-import { navigationItems } from "./items";
 import { MobileNavbar } from "./mobile-widget";
+
+interface Props {
+	lang: Language;
+	t: Translations;
+}
+
+const { lang, t } = Astro.props;
+
+const navigationItems = [
+	{
+		title: t.nav.features,
+		href: `/${lang}/#features`,
+	},
+	{
+		title: t.nav.compare,
+		href: `/${lang}/#comparison`,
+	},
+	{
+		title: t.nav.aboutUs,
+		href: `/${lang}/#about-us`,
+	},
+	{
+		title: t.nav.contactUs,
+		href: `/${lang}/#contact-us`,
+	},
+];
 ---
 
 <header class="bg-background/60 backdrop-blur sticky top-0 z-50 w-full">
@@ -18,6 +45,7 @@ import { MobileNavbar } from "./mobile-widget";
 					))}
 				</div>
 				<div class="flex gap-2 items-center">
+					<LanguageSwitcher currentLang={lang} client:load />
 					<LoginWidget className="md:block hidden" />
 					<SignupWidget variant="outline" className="md:block hidden" />
 					<ThemeSwitcher client:load />

@@ -1,5 +1,13 @@
 ---
+import type { Language, Translations } from "@/i18n/utils";
 import { AboutTabs } from "./components/about-tabs";
+
+interface Props {
+	lang: Language;
+	t: Translations;
+}
+
+const { lang, t } = Astro.props;
 ---
 
 <section id="about-us" class="py-24 relative w-full overflow-hidden">
@@ -9,15 +17,15 @@ import { AboutTabs } from "./components/about-tabs";
     <div class="container mx-auto px-4 relative z-10">
         <div class="flex flex-col items-center text-center mb-16">
             <span class="bg-foreground text-background border border-border rounded-full px-3 py-2 text-xs font-medium flex items-center gap-2">
-				About Us
+				{t.aboutUs.badge}
 			</span>
             
             <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground mb-6">
-                Our Journey & Vision
+                {t.aboutUs.title}
             </h2>
             
             <p class="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">
-                Discover who we are, what drives us, and where we're headed. We are dedicated to making a lasting impact through innovation and community.
+                {t.aboutUs.description}
             </p>
         </div>
 

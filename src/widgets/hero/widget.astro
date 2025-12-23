@@ -2,12 +2,20 @@
 
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import type { Language, Translations } from "@/i18n/utils";
+
+interface Props {
+	lang: Language;
+	t: Translations;
+}
+
+const { lang, t } = Astro.props;
 ---
 
 <div class="relative flex min-h-screen flex-col items-center justify-center">
 			<div class="px-4 py-24">
 				<h1 class="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold md:text-4xl lg:text-7xl text-foreground">
-					{"Plan your trip in minutes, not hours"
+					{t.hero.title
 						.split(" ")
 						.map((word, index) => (
 							<motion.span
@@ -40,9 +48,7 @@ import { Button } from "@/components/ui/button";
 					className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
 					client:load
 				>
-					With SkySearch, you can plan your trip to Central Asia in minutes, not hours. Try our best
-					in class, state of the art, cutting edge AI tools to get your trip
-					up.
+					{t.hero.description}
 				</motion.p>
 				<motion.div
 					initial={{
@@ -59,9 +65,9 @@ import { Button } from "@/components/ui/button";
 					client:load
 					className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
 				>
-					<Button size="lg">Explore Now</Button>
+					<Button size="lg">{t.hero.exploreNow}</Button>
 					<Button variant="outline" size="lg">
-						Contact Us
+						{t.hero.contactUs}
 					</Button>
 				</motion.div>
 			</div>

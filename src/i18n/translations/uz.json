@@ -1,0 +1,47 @@
+{
+	"nav": {
+		"features": "Xususiyatlar",
+		"compare": "Taqqoslash",
+		"aboutUs": "Biz haqimizda",
+		"contactUs": "Bog'lanish"
+	},
+	"hero": {
+		"title": "Sayohatingizni daqiqalarda rejalashtiring",
+		"description": "SkySearch yordamida Markaziy Osiyoga sayohatingizni soatlar emas, daqiqalar ichida rejalashtiring. Eng ilg'or sun'iy intellekt vositalarimizni sinab ko'ring.",
+		"exploreNow": "Hozir kashf qiling",
+		"contactUs": "Bog'lanish"
+	},
+	"features": {
+		"badge": "Bizning xususiyatlarimiz",
+		"title": "Mijozlaringizga yanada yaxshi tajriba taqdim eting, agentligingizni kengaytiring",
+		"description": "Texnologiyadan foydalanib, moliyani sodda, aqlli va foydali qilish.",
+		"card1Title": "Foydalanish shaffofligi",
+		"card1Description": "Maxfiy ma'lumotlaringizni ilg'or xavfsizlik choralari bilan himoya qiling.",
+		"card2Title": "Mijozlar portali",
+		"card2Description": "Maxfiy ma'lumotlaringizni ilg'or xavfsizlik choralari bilan himoya qiling.",
+		"card3Title": "Vazifalar bo'yicha hamkorlik",
+		"card3Description": "Maxfiy ma'lumotlaringizni ilg'or xavfsizlik choralari bilan himoya qiling.",
+		"availableHours": "Mavjud soatlar",
+		"daysLeft": "Loyiha uchun 10 kun qoldi",
+		"hours": "Soatlar",
+		"spent": "Sarflangan",
+		"projected": "Rejalashtirilgan",
+		"available": "Mavjud",
+		"remaining": "Qolgan"
+	},
+	"aboutUs": {
+		"badge": "Biz haqimizda",
+		"title": "Bizning sayohatimiz va qarashlarimiz",
+		"description": "Biz kim ekanligimiz, bizni nima harakatlantirishi va qayerga borayotganimizni bilib oling. Biz innovatsiya va jamiyat orqali doimiy ta'sir ko'rsatishga bag'ishlanganmiz."
+	},
+	"footer": {
+		"about": "Biz haqimizda",
+		"features": "Xususiyatlar",
+		"works": "Ishlar",
+		"career": "Karyera",
+		"copyright": "Yaxshiroq veb uchun ❤️ bilan yaratilgan."
+	},
+	"languageSwitcher": {
+		"label": "Til"
+	}
+}

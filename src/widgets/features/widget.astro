@@ -8,7 +8,15 @@ import {
 	Users,
 	Zap,
 } from "lucide-react";
+import type { Language, Translations } from "@/i18n/utils";
 import { AppLogo } from "../logo/widget";
+
+interface Props {
+	lang: Language;
+	t: Translations;
+}
+
+const { lang, t } = Astro.props;
 ---
 
 <section id="features" class="py-24 overflow-hidden">
@@ -17,15 +25,14 @@ import { AppLogo } from "../logo/widget";
 				<div class="text-center max-w-3xl mx-auto mb-20">
 					<div class="flex justify-center mb-6">
 						<span class="bg-zinc-800 border border-zinc-700 rounded-full px-3 py-1 text-xs font-medium text-zinc-300">
-							Our Features
+							{t.features.badge}
 						</span>
 					</div>
 					<h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-foreground">
-						Offer your clients a better retainer experience, scale your agency
+						{t.features.title}
 					</h2>
 					<p class="text-xl text-zinc-400">
-						Using technology to make finance simpler, smarter and more
-						rewarding.
+						{t.features.description}
 					</p>
 				</div>
 
@@ -121,29 +128,28 @@ import { AppLogo } from "../logo/widget";
 						<div class="p-6 text-foreground">
 							<div class="flex items-center gap-2 mb-3">
 								<BarChart size={18} />
-								<h3 class="font-semibold">Usage Transparency</h3>
+								<h3 class="font-semibold">{t.features.card1Title}</h3>
 							</div>
 							<p class="text-sm mb-6">
-								Protect your sensitive information with advanced security
-								measures.
+								{t.features.card1Description}
 							</p>
 						</div>
 						{/* Visual */}
 						<div class="px-6 pb-6 text-foreground">
 							<div class="rounded-lg p-4 relative overflow-hidden h-[160px]">
 								<div class="absolute top-4 left-4 text-xs font-bold px-2 py-1 rounded shadow">
-									Available Hours
+									{t.features.availableHours}
 									<div class="text-2xl mt-1">
 										130
 										<span class="text-xs font-normal">hr</span>
 									</div>
 									<div class="text-[10px] font-normal">
-										10 Days left for the project
+										{t.features.daysLeft}
 									</div>
 								</div>
 								{/* Progress Bars Mockup */}
 								<div class="absolute bottom-4 left-4 right-4  p-3 rounded-md shadow-lg">
-									<div class="text-[10px] font-bold mb-2">Hours</div>
+									<div class="text-[10px] font-bold mb-2">{t.features.hours}</div>
 									<div class="flex h-1.5 w-full rounded-full overflow-hidden mb-2">
 										<div class="bg-indigo-500 w-[30%]"></div>
 										<div class="bg-orange-400 w-[20%]"></div>
@@ -152,16 +158,16 @@ import { AppLogo } from "../logo/widget";
 									</div>
 									<div class="flex justify-between text-[10px]">
 										<div>
-											<b class="text-black">8</b> Spent
+											<b class="text-black">8</b> {t.features.spent}
 										</div>
 										<div>
-											<b class="text-black">15</b> Projected
+											<b class="text-black">15</b> {t.features.projected}
 										</div>
 										<div>
-											<b class="text-black">23</b> Available
+											<b class="text-black">23</b> {t.features.available}
 										</div>
 										<div>
-											<b class="text-black">12</b> Remaining
+											<b class="text-black">12</b> {t.features.remaining}
 										</div>
 									</div>
 								</div>
@@ -174,11 +180,10 @@ import { AppLogo } from "../logo/widget";
 						<div class="p-6">
 							<div class="flex items-center gap-2 mb-3">
 								<Users size={18} />
-								<h3 class="font-semibold">Client-facing Portal</h3>
+								<h3 class="font-semibold">{t.features.card2Title}</h3>
 							</div>
 							<p class="text-sm mb-6">
-								Protect your sensitive information with advanced security
-								measures.
+								{t.features.card2Description}
 							</p>
 						</div>
 						{/* Visual */}
@@ -209,11 +214,10 @@ import { AppLogo } from "../logo/widget";
 						<div class="p-6">
 							<div class="flex items-center gap-2 mb-3">
 								<Layout size={18} />
-								<h3 class="font-semibold">Task Collaboration</h3>
+								<h3 class="font-semibold">{t.features.card3Title}</h3>
 							</div>
 							<p class="text-sm mb-6">
-								Protect your sensitive information with advanced security
-								measures.
+								{t.features.card3Description}
 							</p>
 						</div>
 						{/* Visual */}
