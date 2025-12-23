@@ -1,8 +1,9 @@
 ---
-import { CompareDemo } from "@/widgets/comparison/widget";
-import PostHogLayout from "../layouts/PostHogLayout.astro";
+import CompareDemo from "@/widgets/comparison/widget.astro";
 import "../styles/global.css";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+import { NODE_ENV } from "astro:env/client";
+import Posthog from "@/components/posthog.astro";
+import AuroraBackground from "@/components/ui/aurora-background.astro";
 import AboutUs from "@/widgets/about-us/widget.astro";
 import { ContactUs } from "@/widgets/contact-us";
 import Features from "@/widgets/features/widget.astro";
@@ -32,14 +33,15 @@ import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
 	}
 </script>
 
-<PostHogLayout>
-  <html lang="en">
+<html lang="en">
     <head>
       <meta charset="utf-8" />
       <meta name="viewport" content="width=device-width" />
       <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
       <meta name="generator" content={Astro.generator} />
-      <title>Astro + TailwindCSS</title>
+      <title>SkySearch</title>
+
+      {NODE_ENV === "production" && <Posthog />}
     </head>
 
     <body>
@@ -47,12 +49,11 @@ import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
         <AppNav />
         <HeroSection />
         <Features />
-        <CompareDemo client:visible />
+        <CompareDemo />
         <AboutUs />
         <ContactUs />
         <Footer />
         <ScrollToTop client:load />
       </AuroraBackground>
     </body>
-  </html>
-</PostHogLayout>
+</html>
