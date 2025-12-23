@@ -8,7 +8,7 @@ import {
 	DropdownMenuItem,
 	DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { type Language, languages } from "@/i18n/utils";
+import { type Language, languages } from "@/i18n/constants";
 
 interface LanguageSwitcherProps {
 	currentLang: Language;

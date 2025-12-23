@@ -4,55 +4,48 @@ import { MoveRight } from "lucide-react";
 import { AnimatePresence, motion } from "motion/react";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
+import type { Translations } from "@/i18n/utils";
 import { cn } from "@/lib/utils";
 
-interface TabData {
-	id: string;
-	label: string;
-	title: string;
-	description: string;
-	image: string;
-	buttonText: string;
+interface AboutTabsProps {
+	t: Translations;
 }
 
-const tabData: TabData[] = [
-	{
-		id: "story",
-		label: "Our Story",
-		title:
-			"Our journey highlights the strength of collaboration and determination.",
-		description:
-			"Together, we have tackled obstacles, rejoiced in our successes, and crafted a tale of progress and achievement.",
-		image:
-			"https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-		buttonText: "Read More",
-	},
-	{
-		id: "mission",
-		label: "Our Mission",
-		title: "We're all about creating awesome resources that help you succeed!",
-		description:
-			"We understand the immense importance of high-quality educational materials in fostering effective learning experiences. That's why we are deeply committed to supporting educators in their vital roles. Our mission is to provide our users with exceptional resources, comprehensive tools, and steadfast support.",
-		image:
-			"https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-		buttonText: "Get started",
-	},
-	{
-		id: "vision",
-		label: "Our Vision",
-		title: "Empowering a future where knowledge knows no bounds.",
-		description:
-			"We envision a world where access to quality education and resources is universal, breaking down barriers and fostering a global community of lifelong learners and innovators.",
-		image:
-			"https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
-		buttonText: "Join us",
-	},
-];
+export function AboutTabs({ t }: AboutTabsProps) {
+	const tabData = [
+		{
+			id: "story",
+			label: t.aboutUs.storyLabel,
+			title: t.aboutUs.storyTitle,
+			description: t.aboutUs.storyDescription,
+			image:
+				"https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+			buttonText: t.aboutUs.storyButton,
+		},
+		{
+			id: "mission",
+			label: t.aboutUs.missionLabel,
+			title: t.aboutUs.missionTitle,
+			description: t.aboutUs.missionDescription,
+			image:
+				"https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+			buttonText: t.aboutUs.missionButton,
+		},
+		{
+			id: "vision",
+			label: t.aboutUs.visionLabel,
+			title: t.aboutUs.visionTitle,
+			description: t.aboutUs.visionDescription,
+			image:
+				"https://images.unsplash.com/photo-1519389950473-47ba0277781c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80",
+			buttonText: t.aboutUs.visionButton,
+		},
+	];
 
-export function AboutTabs() {
 	const [activeTab, setActiveTab] = useState<string>("mission");
 
-	const activeContent = tabData.find((t) => t.id === activeTab) || tabData[1];
+	const activeContent =
+		tabData.find((tab) => tab.id === activeTab) || tabData[1];
 
 	return (
 		<div className="flex flex-col items-center">

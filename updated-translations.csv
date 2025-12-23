@@ -1,0 +1,60 @@
+key,en,uz,ru
+nav.features,Features,Xususiyatlar,Возможности
+nav.compare,Compare,Taqqoslash,Сравнение
+nav.aboutUs,About Us,Biz haqimizda,О нас
+nav.contactUs,Contact Us,Bog'lanish,Контакты
+hero.title,"Plan your trip in minutes, not hours",Sayohatingizni daqiqalarda rejalashtiring,"Планируйте поездку за минуты, а не часы"
+hero.description,"With SkySearch, you can plan your trip to Central Asia in minutes, not hours. Try our best in class, state of the art, cutting edge AI tools to get your trip up.",SkySearch yordamida Markaziy Osiyoga sayohatingizni soatlar emas, daqiqalar ichida rejalashtiring. Eng ilg'or sun'iy intellekt vositalarimizni sinab ko'ring.,"С SkySearch вы можете спланировать поездку в Центральную Азию за минуты, а не часы. Попробуйте наши передовые инструменты ИИ для организации вашего путешествия."
+hero.exploreNow,Explore Now,Hozir kashf qiling,Исследовать
+hero.contactUs,Contact Us,Bog'lanish,Связаться
+features.badge,Our Features,Bizning imkoniyatlar,Наши возможности
+features.title,"Offer your clients a better retainer experience, scale your agency",Mijozlaringizga yaxshiroq tajriba taklif qiling,"Предложите своим клиентам лучший опыт"
+features.description,"Using technology to make finance simpler, smarter and more rewarding.",Texnologiyadan foyalanib moliya tizimini soddalashtiring.,"Использование технологий для упрощения финансов"
+features.card1Title,Usage Transparency,Shaffoflik,Прозрачность использования
+features.card1Description,Protect your sensitive information with advanced security measures.,Maxfiy ma'lumotlaringizni ilg'or xavfsizlik choralari bilan himoya qiling.,Защитите свою конфиденциальную информацию.
+features.card2Title,Client-facing Portal,Mijozlar portali,Клиентский портал
+features.card2Description,Protect your sensitive information with advanced security measures.,Maxfiy ma'lumotlaringizni ilg'or xavfsizlik choralari bilan himoya qiling.,Защитите свою конфиденциальную информацию.
+features.card3Title,Task Collaboration,Vazifalar hamkorligi,Сотрудничество по задачам
+features.card3Description,Protect your sensitive information with advanced security measures.,Maxfiy ma'lumotlaringizni ilg'or xavfsizlik choralari bilan himoya qiling.,Защитите свою конфиденциальную информацию.
+features.availableHours,Available Hours,Mavjud soatlar,Доступные часы
+features.daysLeft,10 Days left for the project,Loyiha uchun 10 kun qoldi,"Осталось 10 дней для проекта"
+features.hours,Hours,Soat,Часы
+features.spent,Spent,Sarflangan,Потрачено
+features.projected,Projected,Rejalashtirilgan,Прогнозируется
+features.available,Available,Mavjud,Доступно
+features.remaining,Remaining,Qolgan,Осталось
+comparison.badge,Transformation,O'zgarish,Трансформация
+comparison.title,Streamline your workflow from chaos to clarity,Ish oqimingizni tartibga soling,"Оптимизируйте свой рабочий процесс"
+comparison.description,See how our platform transforms your daily operations instantly.,Platformamiz operatsiyalaringizni qanday o'zgartirishini ko'ring.,"Посмотрите, как наша платформа мгновенно меняет ваши операции."
+contactUs.badge,Contact Us,Bog'lanish,Контакты
+contactUs.title,How Can We Help?,Qanday yordam bera olamiz?,"Как мы можем помочь?"
+contactUs.description,"Have a question or need assistance? Contact us and let's find a solution together!","Savolingiz bormi? Biz bilan bog'laning va birgalikda yechim topamiz!","Есть вопрос или нужна помощь? Свяжитесь с нами!"
+contactUs.infoTitle,Contact Information,Bog'lanish ma'lumotlari,Контактная информация
+contactUs.infoDescription,"Explore new destinations, indulge in local cuisines, and immerse yourself in diverse cultures.","Yangi joylarni kashf eting, mahalliy taomlardan bahra oling va turli madaniyatlarga sho'ng'ing.","Исследуйте новые направления и погрузитесь в культуру."
+contactUs.formName,Your Name,Ismingiz,Ваше имя
+contactUs.formEmail,Your Email,Emailingiz,Ваш Email
+contactUs.formSubject,Your Subject,Mavzu,Тема
+contactUs.formMessage,Message,Xabar,Сообщение
+contactUs.formPlaceholder,Enter here...,Shu yerga yozing...,Введите здесь...
+contactUs.formSubmit,Send Message,Xabar yuborish,Отправить сообщение
+aboutUs.badge,About Us,Biz haqimizda,О нас
+aboutUs.title,Our Journey & Vision,Bizning yo'limiz va maqsadimiz,Наш путь и видение
+aboutUs.description,"Discover who we are, what drives us, and where we're headed. We are dedicated to making a lasting impact through innovation and community.","Biz kimmiz va qayerga intilayotganimizni kashf eting.","Узнайте, кто мы и к чему мы стремимся."
+aboutUs.storyLabel,Our Story,Bizning tariximiz,Наша история
+aboutUs.storyTitle,Our journey highlights the strength of collaboration and determination.,"Bizning tariximiz hamkorlik va qat'iyatlilikni aks ettiradi.","Наш путь подчеркивает силу сотрудничества."
+aboutUs.storyDescription,"Together, we have tackled obstacles, rejoiced in our successes, and crafted a tale of progress and achievement.","Birgalikda biz to'siqlarni yengib o'tdik va muvaffaqiyatlarimizdan quvondik.","Вместе мы преодолели препятствия."
+aboutUs.storyButton,Read More,Batafsil,Подробнее
+aboutUs.missionLabel,Our Mission,Vazifamiz,Наша миссия
+aboutUs.missionTitle,We're all about creating awesome resources that help you succeed!,Biz sizning muvaffaqiyatingiz uchun resurslar yaratamiz!,"Мы создаем ресурсы для вашего успеха!"
+aboutUs.missionDescription,"We understand the immense importance of high-quality educational materials in fostering effective learning experiences.","Sifatli ta'lim materiallarining ahamiyatini tushunamiz.","Мы понимаем важность качественных материалов."
+aboutUs.missionButton,Get started,Boshlash,Начать
+aboutUs.visionLabel,Our Vision,Maqsadimiz,Наше видение
+aboutUs.visionTitle,Empowering a future where knowledge knows no bounds.,"Bilim chegarasiz bo'lgan kelajakni yaratamiz.","Будущее без границ для знаний."
+aboutUs.visionDescription,"We envision a world where access to quality education and resources is universal.","Sifatli ta'lim hamma uchun ochiq bo'lgan dunyoni tasavvur qilamiz.","Мы видим мир с универсальным доступом к образованию."
+aboutUs.visionButton,Join us,Bizga qo'shiling,Присоединиться к нам
+footer.about,About,Haqida,О нас
+footer.features,Features,Xususiyatlar,Возможности
+footer.works,Works,Ishlar,Работы
+footer.career,Career,Karyera,Карьера
+footer.copyright,Made with ❤️ for better web.,Yaxshiroq veb uchun ❤️ bilan yaratilgan.,Сделано с ❤️ для лучшего веба.
+languageSwitcher.label,Language,Til,Язык

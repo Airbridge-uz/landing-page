@@ -1,12 +1,19 @@
 ---
 import { Mail, MapPin, Phone } from "lucide-react";
+import type { Translations } from "@/i18n/utils";
+
+interface Props {
+	t: Translations;
+}
+
+const { t } = Astro.props;
 ---
 
 <div class="bg-muted text-muted-foreground p-8 rounded-2xl h-full flex flex-col justify-between">
     <div>
-        <h3 class="text-2xl font-bold text-foreground mb-4">Contact Information</h3>
+        <h3 class="text-2xl font-bold text-foreground mb-4">{t.contactUs.infoTitle}</h3>
         <p class="mb-8">
-            Explore new destinations, indulge in local cuisines, and immerse yourself in diverse cultures.
+            {t.contactUs.infoDescription}
         </p>
 
         <div class="space-y-6">

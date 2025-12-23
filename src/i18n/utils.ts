@@ -1,15 +1,11 @@
+// Re-export shared constants
+export { defaultLang, type Language, languages } from "./constants";
+
+import { defaultLang, type Language, languages } from "./constants";
+
 // Google Sheets CSV Export URL
 const GOOGLE_SHEET_CSV_URL =
 	"https://docs.google.com/spreadsheets/d/1gSzniXYJ0M7yZ78YnithF2PnvR8GmPFZFjqGZNHRP3Y/export?format=csv";
-
-export const languages = {
-	en: "English",
-	uz: "O'zbekcha",
-	ru: "Русский",
-} as const;
-
-export type Language = keyof typeof languages;
-export const defaultLang: Language = "en";
 
 // Type for nested translation object
 export interface Translations {
@@ -43,10 +39,40 @@ export interface Translations {
 		available: string;
 		remaining: string;
 	};
+	comparison: {
+		badge: string;
+		title: string;
+		description: string;
+	};
+	contactUs: {
+		badge: string;
+		title: string;
+		description: string;
+		infoTitle: string;
+		infoDescription: string;
+		formName: string;
+		formEmail: string;
+		formSubject: string;
+		formMessage: string;
+		formPlaceholder: string;
+		formSubmit: string;
+	};
 	aboutUs: {
 		badge: string;
 		title: string;
 		description: string;
+		storyLabel: string;
+		storyTitle: string;
+		storyDescription: string;
+		storyButton: string;
+		missionLabel: string;
+		missionTitle: string;
+		missionDescription: string;
+		missionButton: string;
+		visionLabel: string;
+		visionTitle: string;
+		visionDescription: string;
+		visionButton: string;
 	};
 	footer: {
 		about: string;
@@ -154,11 +180,38 @@ async function fetchTranslationsFromSheet(): Promise<
 		ru: headers.indexOf("ru"),
 	};
 
-	// Initialize translation objects
-	const translations: Record<Language, Record<string, unknown>> = {
-		en: {},
-		uz: {},
-		ru: {},
+	// Initialize translation objects with empty sections to avoid "undefined" errors if keys are missing in the sheet
+	const translations: Record<Language, Record<string, any>> = {
+		en: {
+			nav: {},
+			hero: {},
+			features: {},
+			comparison: {},
+			contactUs: {},
+			aboutUs: {},
+			footer: {},
+			languageSwitcher: {},
+		},
+		uz: {
+			nav: {},
+			hero: {},
+			features: {},
+			comparison: {},
+			contactUs: {},
+			aboutUs: {},
+			footer: {},
+			languageSwitcher: {},
+		},
+		ru: {
+			nav: {},
+			hero: {},
+			features: {},
+			comparison: {},
+			contactUs: {},
+			aboutUs: {},
+			footer: {},
+			languageSwitcher: {},
+		},
 	};
 
 	// Process each row (skip header)

@@ -1,5 +1,13 @@
 ---
 import { Compare } from "@/components/ui/compare";
+import type { Language, Translations } from "@/i18n/utils";
+
+interface Props {
+	lang: Language;
+	t: Translations;
+}
+
+const { lang, t } = Astro.props;
 ---
 
 		<section id="comparison" class="w-full py-24 overflow-hidden relative">
@@ -8,14 +16,14 @@ import { Compare } from "@/components/ui/compare";
 				<div class="text-center max-w-3xl mx-auto mb-16">
 					<div class="flex justify-center mb-6">
 						<span class="bg-foreground text-background border border-border rounded-full px-3 py-2 text-xs font-medium flex items-center gap-2">
-							Transformation
+							{t.comparison.badge}
 						</span>
 					</div>
 					<h2 class="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-foreground">
-						Streamline your workflow from chaos to clarity
+						{t.comparison.title}
 					</h2>
 					<p class="text-xl text-muted-foreground">
-						See how our platform transforms your daily operations instantly.
+						{t.comparison.description}
 					</p>
 				</div>
 

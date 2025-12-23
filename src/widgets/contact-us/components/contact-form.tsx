@@ -1,6 +1,11 @@
 import { Send } from "lucide-react";
+import type { Translations } from "@/i18n/utils";
 
-export function ContactForm() {
+interface ContactFormProps {
+	t: Translations;
+}
+
+export function ContactForm({ t }: ContactFormProps) {
 	return (
 		<form className="space-y-6">
 			<div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -9,12 +14,12 @@ export function ContactForm() {
 						htmlFor="name"
 						className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
 					>
-						Your Name
+						{t.contactUs.formName}
 					</label>
 					<input
 						type="text"
 						id="name"
-						placeholder="Enter your name here..."
+						placeholder={t.contactUs.formPlaceholder}
 						className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 					/>
 				</div>
@@ -23,12 +28,12 @@ export function ContactForm() {
 						htmlFor="email"
 						className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
 					>
-						Your Email
+						{t.contactUs.formEmail}
 					</label>
 					<input
 						type="email"
 						id="email"
-						placeholder="Enter your email here..."
+						placeholder={t.contactUs.formPlaceholder}
 						className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 					/>
 				</div>
@@ -39,12 +44,12 @@ export function ContactForm() {
 					htmlFor="subject"
 					className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
 				>
-					Your Subject
+					{t.contactUs.formSubject}
 				</label>
 				<input
 					type="text"
 					id="subject"
-					placeholder="Enter your subject here..."
+					placeholder={t.contactUs.formPlaceholder}
 					className="flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 				/>
 			</div>
@@ -54,11 +59,11 @@ export function ContactForm() {
 					htmlFor="message"
 					className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70 text-foreground"
 				>
-					Message
+					{t.contactUs.formMessage}
 				</label>
 				<textarea
 					id="message"
-					placeholder="Type here"
+					placeholder={t.contactUs.formPlaceholder}
 					rows={6}
 					className="flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
 				/>
@@ -68,7 +73,7 @@ export function ContactForm() {
 				type="submit"
 				className="inline-flex items-center justify-center rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
 			>
-				Send Message
+				{t.contactUs.formSubmit}
 				<Send className="ml-2 w-4 h-4" />
 			</button>
 		</form>
