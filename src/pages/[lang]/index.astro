@@ -7,17 +7,19 @@ import Posthog from "@/components/posthog.astro";
 import AuroraBackground from "@/components/ui/aurora-background.astro";
 import { getTranslations, type Language, languages } from "@/i18n/utils";
 import AboutUs from "@/widgets/about-us/widget.astro";
+import ChatExperienceWidget from "@/widgets/chat-experience/widget";
 import { ContactUs } from "@/widgets/contact-us";
 import Features from "@/widgets/features/widget.astro";
 import Footer from "@/widgets/footer/widget.astro";
 import HeroSection from "@/widgets/hero/widget.astro";
+import HowItWorksWidget from "@/widgets/how-it-works/widget";
 import AppNav from "@/widgets/navbar/widget.astro";
 import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
 
 export function getStaticPaths() {
-	return Object.keys(languages).map((lang) => ({
-		params: { lang },
-	}));
+  return Object.keys(languages).map((lang) => ({
+    params: { lang },
+  }));
 }
 
 const { lang } = Astro.params as { lang: Language };
@@ -25,46 +27,53 @@ const t = await getTranslations(lang);
 ---
 
 <script is:inline>
-	const getThemePreference = () => {
-		if (typeof localStorage !== 'undefined' && localStorage.getItem('theme')) {
-			return localStorage.getItem('theme');
-		}
-		return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-	};
-	const isDark = getThemePreference() === 'dark';
-	document.documentElement.classList[isDark ? 'add' : 'remove']('dark');
- 	
-	if (typeof localStorage !== 'undefined') {
-		const observer = new MutationObserver(() => {
-			const isDark = document.documentElement.classList.contains('dark');
-			localStorage.setItem('theme', isDark ? 'dark' : 'light');
-		});
-		observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
-	}
+  const getThemePreference = () => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+  const isDark = getThemePreference() === "dark";
+  document.documentElement.classList[isDark ? "add" : "remove"]("dark");
+
+  if (typeof localStorage !== "undefined") {
+    const observer = new MutationObserver(() => {
+      const isDark = document.documentElement.classList.contains("dark");
+      localStorage.setItem("theme", isDark ? "dark" : "light");
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+  }
 </script>
 
 <html lang={lang}>
-    <head>
-      <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width" />
-      <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-      <meta name="generator" content={Astro.generator} />
-      <title>SkySearch</title>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>SkySearch</title>
 
-      {NODE_ENV === "production" && <Posthog />}
-      {NODE_ENV === "production" && <SpeedInsights />}
-    </head>
+    {NODE_ENV === "production" && <Posthog />}
+    {NODE_ENV === "production" && <SpeedInsights />}
+  </head>
 
-    <body>
-      <AuroraBackground>
-        <AppNav lang={lang} t={t} />
-        <HeroSection lang={lang} t={t} />
-        <Features lang={lang} t={t} />
-        <CompareDemo lang={lang} t={t} />
-        <AboutUs lang={lang} t={t} />
-        <ContactUs lang={lang} t={t} />
-        <Footer lang={lang} t={t} />
-        <ScrollToTop client:load />
-      </AuroraBackground>
-    </body>
+  <body>
+    <AuroraBackground>
+      <AppNav lang={lang} t={t} />
+      <HeroSection lang={lang} t={t} />
+      <HowItWorksWidget client:load />
+      <ChatExperienceWidget client:load />
+      <Features lang={lang} t={t} />
+      <CompareDemo lang={lang} t={t} />
+      <AboutUs lang={lang} t={t} />
+      <ContactUs lang={lang} t={t} />
+      <Footer lang={lang} t={t} />
+      <ScrollToTop client:load />
+    </AuroraBackground>
+  </body>
 </html>
