@@ -8,5 +8,8 @@
 		"source.sortImports": "always",
 		"source.removeUnusedImports": "always",
 		"source.organizeImports.biome": "always"
+	},
+	"[astro]": {
+		"editor.defaultFormatter": "astro-build.astro-vscode"
 	}
 }

@@ -1,7 +1,15 @@
 ---
-
+import {
+	ArrowRight,
+	ChevronRight,
+	LayoutDashboard,
+	Ticket,
+	Zap,
+} from "lucide-react";
 import { motion } from "motion/react";
-import { Button } from "@/components/ui/button";
+import { Badge } from "@/components/ui/badge";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
 import type { Language, Translations } from "@/i18n/utils";
 
 interface Props {
@@ -12,63 +20,83 @@ interface Props {
 const { lang, t } = Astro.props;
 ---
 
-<div class="relative flex min-h-screen flex-col items-center justify-center">
-			<div class="px-4 py-24">
-				<h1 class="relative z-10 mx-auto max-w-4xl text-center text-2xl font-bold md:text-4xl lg:text-7xl text-foreground">
-					{t.hero.title
-						.split(" ")
-						.map((word, index) => (
-							<motion.span
-								key={index}
-								initial={{ opacity: 0, filter: "blur(4px)", y: 10 }}
-								animate={{ opacity: 1, filter: "blur(0px)", y: 0 }}
-								transition={{
-									duration: 0.3,
-									delay: index * 0.1,
-									ease: "easeInOut",
-								}}
-								className="mr-2 inline-block"
-								client:load
-							>
-								{word}
-							</motion.span>
-						))}
-				</h1>
-				<motion.p
-					initial={{
-						opacity: 0,
-					}}
-					animate={{
-						opacity: 1,
-					}}
-					transition={{
-						duration: 0.3,
-						delay: 0.8,
-					}}
-					className="relative z-10 mx-auto max-w-xl py-4 text-center text-lg font-normal text-neutral-600 dark:text-neutral-400"
-					client:load
-				>
-					{t.hero.description}
-				</motion.p>
-				<motion.div
-					initial={{
-						opacity: 0,
-					}}
-					animate={{
-						opacity: 1,
-					}}
-					transition={{
-						duration: 0.3,
-						delay: 1,
-					}}
+<div
+	class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-20"
+>
+	<!-- Background Effects -->
+	<div
+		class="absolute inset-0 -z-10 h-full w-full bg-background [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] opacity-30"
+	>
+	</div>
+	<div
+		class="absolute inset-0 -z-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 grayscale"
+	>
+	</div>
 
-					client:load
-					className="relative z-10 mt-8 flex flex-wrap items-center justify-center gap-4"
+	<div class="container relative z-10 mx-auto px-4 py-24 text-center">
+		<!-- Notification Badge -->
+		<motion.div
+			initial={{ opacity: 0, y: -20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.5 }}
+			className="mb-8 flex justify-center"
+			client:load
+		>
+			<div
+				class="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-md transition-colors hover:bg-muted cursor-pointer"
+			>
+				<Badge
+					variant="secondary"
+					className="rounded-full px-2 py-0.5 text-xs">New</Badge
 				>
-					<Button size="lg">{t.hero.exploreNow}</Button>
-					<Button variant="outline" size="lg">
-						{t.hero.contactUs}
-					</Button>
-				</motion.div>
+				<span class="text-xs md:text-sm"
+					>Make your guests feel special with Guest Feature</span
+				>
+				<ChevronRight className="h-4 w-4 text-muted-foreground" />
 			</div>
-		</div>
+		</motion.div>
+
+		<!-- Main Headline -->
+		<h1
+			class="mx-auto max-w-5xl text-5xl font-bold tracking-tight text-foreground md:text-7xl lg:text-8xl"
+		>
+			{t.hero.title}
+		</h1>
+
+		<!-- Description -->
+		<motion.p
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.5, delay: 0.2 }}
+			className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl"
+			client:load
+		>
+			{t.hero.description}
+		</motion.p>
+
+		<!-- Action Buttons -->
+		<motion.div
+			initial={{ opacity: 0, y: 20 }}
+			animate={{ opacity: 1, y: 0 }}
+			transition={{ duration: 0.5, delay: 0.4 }}
+			className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+			client:load
+		>
+			<HoverBorderGradient
+				containerClassName="rounded-full"
+				as="button"
+				className={buttonVariants({
+					size: "lg",
+					variant: "default",
+					className: "rounded-full",
+				})}
+				client:load
+			>
+				<span>
+					{t.hero.exploreNow}
+				</span>
+				<ChevronRight className="w-5 h-5" />
+			</HoverBorderGradient>
+		</motion.div>
+	</div>
+</div>
