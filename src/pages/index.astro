@@ -15,6 +15,7 @@ import HeroSection from "@/widgets/hero/widget.astro";
 import HowItWorksWidget from "@/widgets/how-it-works/widget";
 import AppNav from "@/widgets/navbar/widget.astro";
 import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
+import { AstroFont } from "astro-font";
 
 const lang = defaultLang;
 const t = await getTranslations(lang);
@@ -51,7 +52,19 @@ const t = await getTranslations(lang);
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
     <title>SkySearch</title>
-
+    <AstroFont
+      config={[
+        {
+          src: [],
+          name: "Geist",
+          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap',
+          preload: true,
+          display: "swap",
+          selector: "body",
+          fallback: "sans-serif",
+        },
+      ]}
+    />
     {NODE_ENV === "production" && <Posthog />}
     {NODE_ENV === "production" && <SpeedInsights />}
   </head>
