@@ -1,0 +1,35 @@
+---
+import HowItWorksWidget from "./widget";
+---
+
+<section class="py-24 relative overflow-hidden">
+    {/* Background Elements */}
+    <div
+        class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-primary/5 rounded-full blur-[120px] -z-10"
+    >
+    </div>
+
+    <div class="container px-4 mx-auto relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            {/* Badge */}
+            <div class="flex justify-center mb-6">
+                <span
+                    class="bg-foreground text-background border border-border rounded-full px-3 py-1 text-xs font-medium flex items-center gap-2"
+                >
+                    Workflow
+                </span>
+            </div>
+
+            <h2
+                class="text-4xl md:text-5xl font-bold mb-6 tracking-tight text-foreground"
+            >
+                How It Works — In 3 Simple Steps
+            </h2>
+            <p class="text-xl text-muted-foreground mb-8">
+                “No forms. No filters. Just conversation.”
+            </p>
+        </div>
+
+        <HowItWorksWidget client:visible />
+    </div>
+</section>

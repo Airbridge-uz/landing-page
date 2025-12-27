@@ -3,19 +3,19 @@ import CompareDemo from "@/widgets/comparison/widget.astro";
 import "@/styles/global.css";
 import { NODE_ENV } from "astro:env/client";
 import SpeedInsights from "@vercel/speed-insights/astro";
+import { AstroFont } from "astro-font";
 import Posthog from "@/components/posthog.astro";
 import AuroraBackground from "@/components/ui/aurora-background.astro";
 import { defaultLang, getTranslations } from "@/i18n/utils";
 import AboutUs from "@/widgets/about-us/widget.astro";
-import ChatExperienceWidget from "@/widgets/chat-experience/widget";
+import ChatExperienceWidget from "@/widgets/chat-experience/widget.astro";
 import { ContactUs } from "@/widgets/contact-us";
 import Features from "@/widgets/features/widget.astro";
 import Footer from "@/widgets/footer/widget.astro";
 import HeroSection from "@/widgets/hero/widget.astro";
-import HowItWorksWidget from "@/widgets/how-it-works/widget";
+import HowItWorksWidget from "@/widgets/how-it-works/widget.astro";
 import AppNav from "@/widgets/navbar/widget.astro";
 import { ScrollToTop } from "@/widgets/scroll-to-top/widget";
-import { AstroFont } from "astro-font";
 
 const lang = defaultLang;
 const t = await getTranslations(lang);
@@ -57,7 +57,8 @@ const t = await getTranslations(lang);
         {
           src: [],
           name: "Geist",
-          googleFontsURL: 'https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap',
+          googleFontsURL:
+            "https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap",
           preload: true,
           display: "swap",
           selector: "body",
@@ -73,8 +74,8 @@ const t = await getTranslations(lang);
     <AuroraBackground>
       <AppNav lang={lang} t={t} />
       <HeroSection lang={lang} t={t} />
-      <HowItWorksWidget client:load />
-      <ChatExperienceWidget client:load />
+      <HowItWorksWidget />
+      <ChatExperienceWidget />
       <Features lang={lang} t={t} />
       <CompareDemo lang={lang} t={t} />
       <AboutUs lang={lang} t={t} />

@@ -1,0 +1,21 @@
+---
+import { MessageSquare } from "lucide-react";
+import SplitViewVariant from "./widget";
+---
+
+<section class="py-24 relative">
+    <div class="container px-4 mx-auto">
+        <div class="flex flex-col items-center mb-16 space-y-4 text-center">
+            <div
+                class="bg-foreground text-background border border-border rounded-full px-3 py-1 text-xs font-medium flex items-center gap-2"
+            >
+                <MessageSquare className="w-3 h-3" />
+                Conversational UI
+            </div>
+            <h2 class="text-3xl md:text-5xl font-bold text-foreground">
+                Your Personal AI Travel Assistant
+            </h2>
+        </div>
+        <SplitViewVariant client:visible />
+    </div>
+</section>
