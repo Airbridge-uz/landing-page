@@ -6,10 +6,12 @@
 		"contactUs": "Bog'lanish"
 	},
 	"hero": {
-		"title": "Sayohatingizni daqiqalarda rejalashtiring",
-		"description": "SkySearch yordamida Markaziy Osiyoga sayohatingizni soatlar emas, daqiqalar ichida rejalashtiring. Eng ilg'or sun'iy intellekt vositalarimizni sinab ko'ring.",
-		"exploreNow": "Hozir kashf qiling",
-		"contactUs": "Bog'lanish"
+		"title": "Sizni yanada uzoqroqqa va oqilona sayohat qilishga ilhomlantiramiz",
+		"description": "Bugungi shiddatli dunyoda oldinda bo'lish - kengayish, innovatsiyalar yaratish va yetakchilik qilish uchun dadil qadamlar tashlashni anglatadi.",
+		"exploreNow": "Ko'proq ma'lumot",
+		"contactUs": "Bog'lanish",
+		"topPlaces": "Sayohat uchun eng yaxshi joylar",
+		"peopleLoved": "100k kishi yoqtirdi"
 	},
 	"features": {
 		"badge": "Bizning xususiyatlarimiz",

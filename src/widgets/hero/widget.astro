@@ -1,15 +1,7 @@
 ---
-import {
-	ArrowRight,
-	ChevronRight,
-	LayoutDashboard,
-	Ticket,
-	Zap,
-} from "lucide-react";
+import { ArrowRight, Star } from "lucide-react";
 import { motion } from "motion/react";
-import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
-import { HoverBorderGradient } from "@/components/ui/hover-border-gradient";
+import { Button } from "@/components/ui/button";
 import type { Language, Translations } from "@/i18n/utils";
 
 interface Props {
@@ -18,85 +10,208 @@ interface Props {
 }
 
 const { lang, t } = Astro.props;
+
+const topPlaces = [
+	{
+		title: "Dubai Desert Adventure",
+		duration: "7 Days/6 Night",
+		rating: 4.5,
+		image: "/images/dubai.png",
+	},
+	{
+		title: "Bali: Where Serenity Lives 🧘",
+		duration: "9 Days/8 Night",
+		rating: 5,
+		image: "/images/bali.png",
+	},
+	{
+		title: "Maldives Magic Unlocked 🌊",
+		duration: "8 Days/7 Night",
+		rating: 4.5,
+		image: "/images/maldives.png",
+	},
+];
 ---
 
-<div
-	class="relative flex min-h-screen flex-col items-center justify-center overflow-hidden pt-20"
->
-	<!-- Background Effects -->
-	<div
-		class="absolute inset-0 -z-10 h-full w-full bg-background [background:radial-gradient(125%_125%_at_50%_10%,#000_40%,#63e_100%)] opacity-30"
-	>
-	</div>
-	<div
-		class="absolute inset-0 -z-10 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 brightness-100 contrast-150 grayscale"
-	>
+<section class="relative min-h-screen pt-32 pb-20 overflow-hidden">
+	<!-- Background Gradients -->
+	<div class="absolute top-0 left-0 w-full h-full -z-10 bg-background">
+		<div
+			class="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-primary/20 blur-[120px]"
+		>
+		</div>
+		<div
+			class="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-blue-500/10 blur-[120px]"
+		>
+		</div>
 	</div>
 
-	<div class="container relative z-10 mx-auto px-4 py-24 text-center">
-		<!-- Notification Badge -->
-		<motion.div
-			initial={{ opacity: 0, y: -20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5 }}
-			className="mb-8 flex justify-center"
-			client:load
-		>
-			<div
-				class="inline-flex items-center gap-2 rounded-full border border-border bg-muted/50 px-4 py-1.5 text-sm text-muted-foreground backdrop-blur-md transition-colors hover:bg-muted cursor-pointer"
-			>
-				<Badge
-					variant="secondary"
-					className="rounded-full px-2 py-0.5 text-xs">New</Badge
+	<div class="container mx-auto px-6">
+		<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+			<!-- Left Content -->
+			<div class="lg:col-span-6 pt-10">
+				<motion.h1
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8 }}
+					className="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight text-foreground leading-[1.1]"
+					client:load
 				>
-				<span class="text-xs md:text-sm"
-					>Make your guests feel special with Guest Feature</span
+					From Fragmented Chaos to One Intelligent Journey
+				</motion.h1>
+
+				<motion.p
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.2 }}
+					className="mt-8 text-lg text-muted-foreground/80 leading-relaxed max-w-xl"
+					client:load
 				>
-				<ChevronRight className="h-4 w-4 text-muted-foreground" />
+					SkySearch turns disconnected searches, tabs, and redirects
+					into a single intelligent travel flow — planning, booking,
+					and guiding your journey across Central Asia.
+				</motion.p>
+
+				<motion.div
+					initial={{ opacity: 0, y: 20 }}
+					animate={{ opacity: 1, y: 0 }}
+					transition={{ duration: 0.8, delay: 0.4 }}
+					className="mt-10"
+					client:load
+				>
+					<Button
+						size="lg"
+						className="rounded-full px-8 py-6 text-lg font-medium group bg-foreground text-background hover:bg-foreground/90 transition-all"
+					>
+						Explore More
+						<ArrowRight
+							className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform"
+						/>
+					</Button>
+				</motion.div>
 			</div>
-		</motion.div>
 
-		<!-- Main Headline -->
-		<h1
-			class="mx-auto max-w-5xl text-5xl font-bold tracking-tight text-foreground md:text-7xl lg:text-8xl"
-		>
-			{t.hero.title}
-		</h1>
+			<!-- Right Content (Image with Cutout) -->
+			<div class="lg:col-span-6 relative group">
+				<motion.div
+					initial={{ opacity: 0, scale: 0.95 }}
+					animate={{ opacity: 1, scale: 1 }}
+					transition={{ duration: 1 }}
+					className="relative"
+					client:load
+				>
+					<!-- The Image with mask/clip-path -->
+					<div
+						class="relative w-full aspect-4/3 rounded-[3rem] overflow-hidden hero-image-container"
+					>
+						<img
+							src="/images/hero-sunset.png"
+							alt="Travel Hero"
+							class="w-full h-full object-cover"
+						/>
 
-		<!-- Description -->
-		<motion.p
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5, delay: 0.2 }}
-			className="mx-auto mt-8 max-w-2xl text-lg text-muted-foreground md:text-xl"
-			client:load
-		>
-			{t.hero.description}
-		</motion.p>
+						<!-- Overlay Info -->
+						<div
+							class="absolute bottom-8 right-8 bg-black/40 backdrop-blur-xl border border-white/10 rounded-full py-2 px-4 flex items-center gap-3"
+						>
+							<div class="flex -space-x-3">
+								{
+									[1, 2, 3].map((i) => (
+										<div class="w-10 h-10 rounded-full border-2 border-background overflow-hidden bg-muted">
+											<img
+												src={`https://api.dicebear.com/7.x/avataaars/svg?seed=${i + 1}`}
+												alt="Avatar"
+											/>
+										</div>
+									))
+								}
+							</div>
+							<div class="flex flex-col">
+								<span
+									class="text-white font-bold text-sm tracking-tight"
+									>100k</span
+								>
+								<span
+									class="text-white/60 text-[10px] uppercase font-semibold"
+									>People loved</span
+								>
+							</div>
+						</div>
+					</div>
+				</motion.div>
+			</div>
+		</div>
 
-		<!-- Action Buttons -->
-		<motion.div
-			initial={{ opacity: 0, y: 20 }}
-			animate={{ opacity: 1, y: 0 }}
-			transition={{ duration: 0.5, delay: 0.4 }}
-			className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
-			client:load
-		>
-			<HoverBorderGradient
-				containerClassName="rounded-full"
-				as="button"
-				className={buttonVariants({
-					size: "lg",
-					variant: "default",
-					className: "rounded-full",
-				})}
+		<!-- Top Places Section -->
+		<div class="mt-32">
+			<motion.h2
+				initial={{ opacity: 0, x: -20 }}
+				whileInView={{ opacity: 1, x: 0 }}
+				viewport={{ once: true }}
+				className="text-2xl font-bold text-foreground mb-8"
 				client:load
 			>
-				<span>
-					{t.hero.exploreNow}
-				</span>
-				<ChevronRight className="w-5 h-5" />
-			</HoverBorderGradient>
-		</motion.div>
+				Top places to Travel
+			</motion.h2>
+
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{
+					topPlaces.map((place, index) => (
+						<motion.div
+							initial={{ opacity: 0, y: 20 }}
+							whileInView={{ opacity: 1, y: 0 }}
+							viewport={{ once: true }}
+							transition={{ delay: index * 0.1 }}
+							className="group cursor-pointer bg-muted/30 hover:bg-muted/50 border border-border/50 rounded-3xl p-3 transition-all"
+							client:load
+						>
+							<div class="flex items-center gap-4">
+								<div class="relative w-24 h-24 shrink-0 rounded-2xl overflow-hidden">
+									<img
+										src={place.image}
+										alt={place.title}
+										class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+									/>
+								</div>
+								<div class="flex flex-col justify-center">
+									<h3 class="text-foreground font-bold text-sm leading-tight">
+										{place.title}
+									</h3>
+									<p class="text-muted-foreground text-xs mt-1">
+										{place.duration}
+									</p>
+									<div class="flex items-center gap-2 mt-2">
+										<div class="flex">
+											{[1, 2, 3, 4, 5].map((i) => (
+												<Star
+													className={`w-3 h-3 ${
+														i <=
+														Math.floor(place.rating)
+															? "fill-yellow-500 text-yellow-500"
+															: "text-muted-foreground/30"
+													}`}
+												/>
+											))}
+										</div>
+										<span class="text-muted-foreground text-[10px] font-medium leading-none">
+											({place.rating})
+										</span>
+									</div>
+								</div>
+							</div>
+						</motion.div>
+					))
+				}
+			</div>
+		</div>
 	</div>
-</div>
+</section>
+
+<style>
+	.hero-image-container {
+		/* Cutout effect mimicking the screenshot */
+		mask-image: url("data:image/svg+xml,%3Csvg width='800' height='600' viewBox='0 0 800 600' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M800 60C800 26.8629 773.137 0 740 0H240C206.863 0 180 26.8629 180 60V120C180 153.137 153.137 180 120 180H60C26.8629 180 0 206.863 0 240V540C0 573.137 26.8629 600 60 600H740C773.137 600 800 573.137 800 540V60Z' fill='black'/%3E%3C/svg%3E");
+		mask-size: cover;
+		mask-repeat: no-repeat;
+	}
+</style>
