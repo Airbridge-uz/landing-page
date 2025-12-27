@@ -8,11 +8,15 @@ interface Props {
 	className?: string;
 	variant?: ButtonProps["variant"];
 	size?: ButtonProps["size"];
+	effect?: ButtonProps["effect"];
 }
 
-const { className, variant, size } = Astro.props;
+const { className, variant, size, effect = "shine" } = Astro.props;
 ---
 
-<a class={buttonVariants({ variant, size, className })} href={`${APP_URL}/sign-up`}>
+<a
+	class={buttonVariants({ variant, size, effect, className })}
+	href={`${APP_URL}/sign-up`}
+>
 	Sign up
 </a>

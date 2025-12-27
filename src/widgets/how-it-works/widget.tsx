@@ -46,12 +46,14 @@ const Timeline = () => {
 						viewport={{ once: true }}
 						className="flex flex-col items-center text-center"
 					>
-						<div className="w-12 h-12 rounded-full bg-background border-2 border-primary flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(var(--primary),0.3)]">
-							<span className="font-bold text-primary">{index + 1}</span>
+						<div className="w-12 h-12 rounded-full bg-background border-2 border-primary flex items-center justify-center mb-6 shadow-[0_0_15px_rgba(var(--primary),0.3)] dark:bg-primary">
+							<span className="font-bold text-primary dark:text-foreground">
+								{index + 1}
+							</span>
 						</div>
 
 						<div className="p-6 rounded-xl bg-card/50 backdrop-blur-sm border border-border/50 min-h-[160px] flex flex-col items-center justify-center gap-3 w-full group hover:border-primary/50 transition-colors">
-							<div className="text-foreground/80 group-hover:text-primary transition-colors">
+							<div className="text-foreground/80 group-hover:text-primary transition-colors dark:group-hover:text-foreground/80">
 								{step.icon}
 							</div>
 							<h3 className="text-lg font-semibold">{step.title}</h3>

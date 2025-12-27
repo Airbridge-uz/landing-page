@@ -3,6 +3,7 @@ import { ArrowRight, Star } from "lucide-react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
 import type { Language, Translations } from "@/i18n/utils";
+import { TopPlacesCarousel } from "./components/top-places-carousel";
 
 interface Props {
 	lang: Language;
@@ -29,6 +30,24 @@ const topPlaces = [
 		duration: "8 Days/7 Night",
 		rating: 4.5,
 		image: "/images/maldives.png",
+	},
+	{
+		title: "Tashkent City Tour 🇺🇿",
+		duration: "3 Days/2 Night",
+		rating: 4.8,
+		image: "/images/dubai.png", // Reusing image for demo
+	},
+	{
+		title: "Samarkand Silk Road 🕌",
+		duration: "5 Days/4 Night",
+		rating: 4.9,
+		image: "/images/bali.png", // Reusing image for demo
+	},
+	{
+		title: "Bukhara Ancient Spirit ✨",
+		duration: "4 Days/3 Night",
+		rating: 4.7,
+		image: "/images/maldives.png", // Reusing image for demo
 	},
 ];
 ---
@@ -154,54 +173,8 @@ const topPlaces = [
 				Top places to Travel
 			</motion.h2>
 
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-				{
-					topPlaces.map((place, index) => (
-						<motion.div
-							initial={{ opacity: 0, y: 20 }}
-							whileInView={{ opacity: 1, y: 0 }}
-							viewport={{ once: true }}
-							transition={{ delay: index * 0.1 }}
-							className="group cursor-pointer bg-muted/30 hover:bg-muted/50 border border-border/50 rounded-3xl p-3 transition-all"
-							client:load
-						>
-							<div class="flex items-center gap-4">
-								<div class="relative w-24 h-24 shrink-0 rounded-2xl overflow-hidden">
-									<img
-										src={place.image}
-										alt={place.title}
-										class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-									/>
-								</div>
-								<div class="flex flex-col justify-center">
-									<h3 class="text-foreground font-bold text-sm leading-tight">
-										{place.title}
-									</h3>
-									<p class="text-muted-foreground text-xs mt-1">
-										{place.duration}
-									</p>
-									<div class="flex items-center gap-2 mt-2">
-										<div class="flex">
-											{[1, 2, 3, 4, 5].map((i) => (
-												<Star
-													className={`w-3 h-3 ${
-														i <=
-														Math.floor(place.rating)
-															? "fill-yellow-500 text-yellow-500"
-															: "text-muted-foreground/30"
-													}`}
-												/>
-											))}
-										</div>
-										<span class="text-muted-foreground text-[10px] font-medium leading-none">
-											({place.rating})
-										</span>
-									</div>
-								</div>
-							</div>
-						</motion.div>
-					))
-				}
+			<div class="-mx-6">
+				<TopPlacesCarousel places={topPlaces} client:load />
 			</div>
 		</div>
 	</div>

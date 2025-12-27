@@ -9,6 +9,9 @@ interface Props {
 const { className } = Astro.props;
 ---
 
-<a class={buttonVariants({ variant: "default", className })} href={`${APP_URL}/login`}>
+<a
+	class={buttonVariants({ variant: "default", effect: "shine", className })}
+	href={`${APP_URL}/login`}
+>
 	Login
 </a>

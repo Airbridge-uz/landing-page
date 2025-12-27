@@ -35,21 +35,35 @@ const navigationItems = [
 ---
 
 <header class="bg-background/60 backdrop-blur sticky top-0 z-50 w-full">
-			<div class="mx-auto flex max-w-7xl items-center justify-between gap-2 md:gap-8 px-4 py-3 sm:px-6">
-				<AppLogo />
-				<div class="text-muted-foreground flex flex-1 items-center gap-8 font-medium md:justify-center lg:gap-16">
-					{navigationItems.map((item) => (
-						<a href={item.href} class="hover:text-primary max-md:hidden">
-							{item.title}
-						</a>
-					))}
-				</div>
-				<div class="flex gap-2 items-center">
-					<LanguageSwitcher currentLang={lang} client:load />
-					<LoginWidget className="md:block hidden" />
-					<SignupWidget variant="outline" className="md:block hidden" />
-					<ThemeSwitcher client:load />
-				</div>
-                <MobileNavbar client:media="(max-width: 768px)" />
-			</div>
-		</header>
+	<div
+		class="mx-auto flex max-w-7xl items-center justify-between gap-2 md:gap-8 px-4 py-3 sm:px-6"
+	>
+		<AppLogo />
+		<div
+			class="text-muted-foreground flex flex-1 items-center gap-8 font-medium md:justify-center lg:gap-16"
+		>
+			{
+				navigationItems.map((item) => (
+					<a
+						href={item.href}
+						class="hover:text-primary max-md:hidden"
+					>
+						{item.title}
+					</a>
+				))
+			}
+		</div>
+		<div class="flex gap-2">
+			<LanguageSwitcher currentLang={lang} client:load />
+			<LoginWidget
+				className="hidden items-center justify-center md:flex"
+			/>
+			<SignupWidget
+				variant="outline"
+				className="hidden items-center justify-center md:flex"
+			/>
+			<ThemeSwitcher client:load />
+		</div>
+		<MobileNavbar client:media="(max-width: 768px)" />
+	</div>
+</header>
