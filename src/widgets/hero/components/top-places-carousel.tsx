@@ -16,10 +16,9 @@ interface TopPlacesCarouselProps {
 
 export const TopPlacesCarousel = ({ places }: TopPlacesCarouselProps) => {
 	return (
-		<div className="w-full">
+		<div className="w-[80vw] mx-auto md:w-full md:mx-0">
 			<InfiniteMovingCards
 				items={places}
-				direction="left"
 				speed="normal"
 				renderItem={(place) => (
 					<div className="group cursor-pointer hover:bg-background/80 backdrop-blur-sm border border-border/50 rounded-3xl p-3 transition-all mx-2 bg-background">
