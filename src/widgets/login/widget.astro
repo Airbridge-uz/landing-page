@@ -1,6 +1,7 @@
 ---
 import { APP_URL } from "astro:env/client";
 import { buttonVariants } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface Props {
 	className?: string;
@@ -10,7 +11,10 @@ const { className } = Astro.props;
 ---
 
 <a
-	class={buttonVariants({ variant: "default", effect: "shine", className })}
+	class={cn(
+		buttonVariants({ variant: "default", effect: "shine" }),
+		className,
+	)}
 	href={`${APP_URL}/login`}
 >
 	Login

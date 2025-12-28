@@ -20,10 +20,6 @@ const navigationItems = [
 		href: `/${lang}/#features`,
 	},
 	{
-		title: t.nav.compare,
-		href: `/${lang}/#comparison`,
-	},
-	{
 		title: t.nav.aboutUs,
 		href: `/${lang}/#about-us`,
 	},
@@ -34,9 +30,9 @@ const navigationItems = [
 ];
 ---
 
-<header class="bg-background/60 backdrop-blur sticky top-0 z-50 w-full">
+<header class="bg-background/90 backdrop-blur sticky top-0 z-50 w-full">
 	<div
-		class="mx-auto flex max-w-7xl items-center justify-between gap-2 md:gap-8 px-4 py-3 sm:px-6"
+		class="container mx-auto flex items-center justify-between gap-2 md:gap-8 px-4 py-3 sm:px-6"
 	>
 		<AppLogo />
 		<div
@@ -53,8 +49,7 @@ const navigationItems = [
 				))
 			}
 		</div>
-		<div class="flex gap-2">
-			<LanguageSwitcher currentLang={lang} client:load />
+		<div class="flex gap-2 items-center">
 			<LoginWidget
 				className="hidden items-center justify-center md:flex"
 			/>
@@ -63,6 +58,7 @@ const navigationItems = [
 				className="hidden items-center justify-center md:flex"
 			/>
 			<ThemeSwitcher client:load />
+			<LanguageSwitcher currentLang={lang} client:load />
 		</div>
 		<MobileNavbar client:media="(max-width: 768px)" />
 	</div>
